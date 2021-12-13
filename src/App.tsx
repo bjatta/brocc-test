@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Body from "./Example";
+import Counter from "./Counter";
+import {QueryClient, QueryClientProvider} from "react-query";
+const queryClient = new QueryClient()
 
 function App() {
+    const [index, setIndex] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <QueryClientProvider client={queryClient}>
+      <div className="App">
+      <Counter counter={index} setCounter = {setIndex}/>
+      <Body index={index}/>
     </div>
+      </QueryClientProvider>
   );
 }
 
