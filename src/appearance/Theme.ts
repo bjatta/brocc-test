@@ -1,14 +1,14 @@
 const dayTheme = {
-    backgroundColor: 'white',
-    color: 'black'
+  backgroundColor: "white",
+  color: "black",
 };
 
 const nightThemde = {
-    backgroundColor: 'black',
-    color: 'lightgray'
+  backgroundColor: "black",
+  color: "lightgray",
 };
 
-const hour = (new Date()).getHours();
+const hour = new Date().getHours();
 
 const isDay = hour > 8 && hour < 18;
 

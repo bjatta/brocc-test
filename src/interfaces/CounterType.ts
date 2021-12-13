@@ -1,1 +1,3 @@
-export interface CounterType {index?: number}
+export interface CounterType {
+  index?: number;
+}
